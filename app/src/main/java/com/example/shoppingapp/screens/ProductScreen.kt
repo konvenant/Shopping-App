@@ -32,7 +32,7 @@ fun ProductScreen(navController: NavController,productsViewModel: ProductsViewmo
             items(products) { product ->
                 ProductItem(product) {
                     productsViewModel.addProduct(product)
-                    Toast.makeText(context,"${product.name} added to cart",Toast.LENGTH_LONG).show()
+                    Toast.makeText(context,"${product.name} added to cart",Toast.LENGTH_SHORT).show()
                 }
             }
         }

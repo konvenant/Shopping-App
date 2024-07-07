@@ -14,6 +14,7 @@ class ProductsViewmodel : ViewModel() {
     fun addProduct(product: Product) {
         if (!checkoutItems.contains(product)) {
             checkoutItems.add(product)
+            totalSumOfProduct.intValue = calculateSumOfProduct()
         }
     }
 
