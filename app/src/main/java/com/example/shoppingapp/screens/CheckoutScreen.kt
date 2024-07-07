@@ -55,13 +55,16 @@ fun CheckoutScreen(navController: NavController,productsViewModel: ProductsViewm
                                 onClick = {},
                                 elevation = ButtonDefaults.buttonElevation(4.dp)
                             ) {
-                                Text(text = "$$totalPrice")
+                                Text(text = "$${totalPrice.intValue}")
                             }
                         }
                     } else{
                         Text(
                             text = "Unable to checkout due to empty cart, navigate to products to add products",
-                            color = Color.Red
+                            color = Color.Red,
+                            modifier = Modifier
+                                .padding(16.dp)
+                                .align(Alignment.Center)
                         )
                     }
                 }
@@ -70,6 +73,7 @@ fun CheckoutScreen(navController: NavController,productsViewModel: ProductsViewm
         Button(
             onClick = {
                 navController.navigate("order_successful")
+
             },
             modifier = Modifier
                 .fillMaxWidth()
